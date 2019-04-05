@@ -13,13 +13,14 @@
     "express": "^4.13.4",
     "express-session": "^1.13.0",
     "forever": "^0.15.1",
-    "helmet": "^2.0.0",
-    "marked": "0.3.9",
+    "helmet": "^3.8.2",
+    "marked": "0.3.17",
     "mongodb": "^2.1.18",
     "node-esapi": "0.0.1",
     "serve-favicon": "^2.3.0",
     "swig": "^1.4.2",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "snyk": "^1.147.3"
   },
   "comments": {
     "//": "a9 insecure components"
@@ -32,7 +33,9 @@
     "start": "node server.js",
     "test": "node node_modules/grunt-cli/bin/grunt test",
     "db:seed": "grunt db-reset",
-    "precommit": "grunt precommit"
+    "precommit": "grunt precommit",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "devDependencies": {
     "async": "^2.0.0-rc.4",
@@ -54,5 +57,6 @@
     "zaproxy": "^0.2.0"
   },
   "repository": "https://github.com/OWASP/NodejsGoat",
-  "license": "Apache 2.0"
+  "license": "Apache 2.0",
+  "snyk": true
 }
